@@ -19,6 +19,7 @@ def union(i,j):
 	parent[i_s]=j_s
 result=[]
 total = 0
+start=time.clock()
 for k in range(0,len(graph)-1):
 	u=graph[k][0]
 	v=graph[k][1]
@@ -28,8 +29,7 @@ for k in range(0,len(graph)-1):
 		result.append([u,v,graph[k][2]])
 		total +=graph[k][2]
 		union(u,v)
-start=time.clock()
+end=time.clock()
 print(result)
 print("Total =",total)
-end=time.clock()
 print("The Program ran for: ",end-start,"seconds")
