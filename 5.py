@@ -1,12 +1,10 @@
 import random
 import time
-count = 0
 def merge_sort(li):
   if len(li) < 2: return li
     m = len(li) // 2
     return merge(merge_sort(li[:m]), merge_sort(li[m:]))
 def merge(l, r):
-  global count
   result = []
   i = j = 0
   while i < len(l) and j < len(r):
@@ -15,7 +13,6 @@ def merge(l, r):
       i += 1
     else:
       result.append(r[j])
-      count = count + (len(l) - i)
       j += 1
   result.extend(l[i:])
   result.extend(r[j:])
@@ -26,4 +23,4 @@ print("Unsorted list" , unsorted)
 start = time.clock()
 print ("Sorted List" , merge_sort(unsorted))
 stop = time.clock()
-print ("Number of inversions = " ,count , "\nTime taken", stop-start )
+print ("Time taken", stop-start )
