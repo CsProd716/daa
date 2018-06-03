@@ -31,7 +31,7 @@ i = n
 k = W
 cont = []
 while i>0 and k>0:
-  if M[i][x]!=M[i-1][x]:
+  if M[i][k]!=M[i-1][k]:
     cont.append(i)
     k = k-weights[i]
     i = i -1
