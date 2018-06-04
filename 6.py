@@ -2,9 +2,10 @@ import random
 import time
 count = 0
 def merge_sort(li):
-  if len(li) < 2: return li
-    m = len(li) // 2
-    return merge(merge_sort(li[:m]), merge_sort(li[m:]))
+  if len(li) < 2: 
+    return li
+  m = len(li) // 2
+  return merge(merge_sort(li[:m]), merge_sort(li[m:]))
 def merge(l, r):
   global count
   result = []
